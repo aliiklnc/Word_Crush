@@ -1,0 +1,552 @@
+﻿KOCAEL─░ ├£N─░VERS─░TES─░ 
+B─░LG─░SAYAR M├£HEND─░SL─░─Ş─░ B├ûL├£M├£ 
+YAZILIM LABORATUVARI-II 
+ 
+PROJE II 
+ 
+Word Crush Mobil Oyunu 
+ 
+Proje Teslim Tarihi: 01.05.2026 
+Bu projede mobil programlama kullan─▒larak kelime tabanl─▒ bir oyun geli┼ştirilmesi 
+hedeflenmektedir. Oyuncu, oyun alan─▒nda bulunan harfleri kullanarak anlaml─▒ kelimeler 
+olu┼şturur. Olu┼şturulan kelimeler oyun alan─▒ndan silinir ve yerlerine yeni harfler d├╝┼şer. Oyuncu 
+verilen hamle say─▒s─▒ i├ğerisinde en y├╝ksek puan─▒ elde etmeye ├ğal─▒┼ş─▒r. Bu oyunun temel amac─▒, 
+oyuncunun hem kelime bilgisini hem de stratejik d├╝┼ş├╝nme yetene─şini geli┼ştirmektir.  
+Ama├ğ:  
+1. Mobil programlama konusunda bilgi ve beceri kazan─▒lmas─▒  
+2. Mobil programlama arac─▒l─▒─ş─▒yla oyun geli┼ştirme ve uygulama olu┼şturma becerisinin 
+geli┼ştirilmesi.  
+3. Dinamik ├Âzelliklere sahip bir program geli┼ştirebilme 
+Programlama Dili: Java, Kotlin, Flutter, React Native, Swift vb.  
+Mobil Programlama 
+1.ÔÇï Mobil programlama kodlar─▒ Android veya IOS i├ğin geli┼ştirilmelidir.  
+2.ÔÇï Kodlama i├ğin herhangi bir programlama dili kullan─▒labilir. 
+3.ÔÇï Geli┼ştirilecek uygulama kelime tabanl─▒ bir oyundur. Bundan dolay─▒ oyunda kelime 
+listesinin kullan─▒lmas─▒ gereklidir.  
+4.ÔÇï Sunum s─▒ras─▒nda oyun g├Âsterimi emulat├Âr veya telefon ├╝zerinde ger├ğekle┼ştirilecektir. 
+Web veya masa├╝st├╝ g├Âsterimler kabul edilmeyecektir.  
+ 
+ 
+ 
+ 
+ 
+ 
+Uygulama Yap─▒s─▒ 
+Oyun, iki boyutlu bir grid yap─▒s─▒ndan olu┼şmaktad─▒r. Bu grid, sat─▒r ve s├╝tunlardan meydana gelen 
+kare bir yap─▒dad─▒r. Her kare i├ğerisinde bir harf bulunmaktad─▒r. Oyuncu bu harfleri kullanarak 
+kelime olu┼şturacakt─▒r. 
+Oyun Giri┼ş  Ekran─▒ ve Se├ğenekler 
+Oyun ilk a├ğ─▒ld─▒─ş─▒nda oyuncudan kullan─▒c─▒ ad─▒ girmesi istenecektir. Kullan─▒c─▒ ad─▒ girdikten sonra 
+oyuncu ana ekrana y├Ânlendirilir. Kullan─▒c─▒ ad─▒ ilk giri┼şte al─▒n─▒r ve daha sonra kullan─▒lmak ├╝zere 
+saklan─▒r. Kullan─▒c─▒ uygulamay─▒ tekrar a├ğt─▒─ş─▒nda yeniden isim girmesine gerek kalmayacakt─▒r. 
+De─şi┼şiklik durumlar─▒nda ana ekran─▒n sol ├╝st k─▒s─▒mda yer alan kullan─▒c─▒ isminin ├╝zerine t─▒klayarak 
+de─şi┼ştirilecektir. 
+Ana Ekran Tasar─▒m─▒ 
+Ana ekran, kullan─▒c─▒n─▒n oyun ile ilgili t├╝m i┼şlemleri ger├ğekle┼ştirebilece─şi merkez ekran olacakt─▒r. 
+Bu ekran─▒n orta k─▒sm─▒nda a┼şa─ş─▒daki se├ğenekler bulunacakt─▒r: 
+ÔùÅÔÇï Yeni Oyun 
+ÔùÅÔÇï Skor Tablosu 
+ÔùÅÔÇï Market 
+Yeni Oyun 
+Kullan─▒c─▒ "Yeni Oyun" butonuna t─▒kland─▒─ş─▒nda oyun ayarlar─▒n─▒n se├ğilece─şi ekran a├ğ─▒l─▒r. 
+Bu ekranda kullan─▒c─▒ya grid boyutu se├ğenekleri sunulur: 
+ÔùÅÔÇï 6x6 Grid (Zor Seviye) 
+ÔùÅÔÇï 8x8 Grid (Orta Seviye) 
+ÔùÅÔÇï 10x10 Grid (Kolay Seviye) 
+Kullan─▒c─▒ grid boyutunu se├ğtikten sonra Hamle say─▒s─▒n─▒ se├ğim ekran─▒na y├Ânlendirecektir. A├ğ─▒lan 
+ekranda  
+ÔùÅÔÇï Kolay level ÔåÆ 25 hamle 
+ÔùÅÔÇï Orta level ÔåÆ 20 hamle  
+ÔùÅÔÇï Zor level ÔåÆ 15 hamle 
+Hamle say─▒s─▒n─▒ se├ğecektir ve oyun ba┼şlayacakt─▒r. Oyuncu her kelime olu┼şturdu─şunda bir hamle 
+harcam─▒┼ş olur. (Hatal─▒ kelimede olsa) 
+Skor Tablosu  
+Skor tablosunda, kendi performans─▒n─▒ takip etmesini ama├ğlamaktad─▒r. Skor tablosu, oyuncunun 
+oynad─▒─ş─▒ oyunlar─▒n ge├ğmi┼şini inceleyebilece─şi ve geli┼şimini g├Âzlemleyebilece─şi bir yap─▒ 
+sunacakt─▒r. 
+Ana ekranda bulunan "Skor Tablosu" butonuna t─▒kland─▒─ş─▒nda kullan─▒c─▒n─▒n ge├ğmi┼ş oyunlar─▒n 
+listelendi─şi bir ekran a├ğ─▒lacakt─▒r. 
+Skor tablosu ekran─▒n─▒n ├╝st k─▒sm─▒nda kullan─▒c─▒n─▒n genel performans─▒n─▒ g├Âsteren bir ├Âzet alan─▒ 
+bulunacakt─▒r. Bu alanda a┼şa─ş─▒daki bilgiler yer alacakt─▒r: 
+ÔùÅÔÇï Toplam Oynanan Oyun Say─▒s─▒ 
+ÔùÅÔÇï En Y├╝ksek Puan 
+ÔùÅÔÇï Ortalama Puan 
+ÔùÅÔÇï Toplam Bulunan Kelime Say─▒s─▒ 
+ÔùÅÔÇï En Uzun Kelime 
+ÔùÅÔÇï Toplam Oyun S├╝resi 
+├ûrnek: 
+Toplam Oyun: 12ÔÇï
+En Y├╝ksek Puan: 1450ÔÇï
+Ortalama Puan: 860ÔÇï
+Toplam Kelime: 132ÔÇï
+En Uzun Kelime: "KEL─░MELER"ÔÇï
+Toplam S├╝re: 1 saat 25 dakika 
+Bu alan kullan─▒c─▒n─▒n genel performans─▒n─▒ h─▒zl─▒ ┼şekilde g├Ârebilmesini sa─şlar. 
+Skor ekran─▒n─▒n alt k─▒sm─▒nda kullan─▒c─▒n─▒n oynad─▒─ş─▒ t├╝m oyunlar liste halinde g├Âsterilecektir. Bu 
+liste en son oynanan oyun ├╝stte olacak ┼şekilde s─▒ralanacakt─▒r. 
+Her oyun kart─▒nda a┼şa─ş─▒daki bilgiler yer alacakt─▒r: 
+ÔùÅÔÇï Oyun numaras─▒ 
+ÔùÅÔÇï Oyun tarihi 
+ÔùÅÔÇï Grid boyutu (6x6 / 8x8 / 10x10) 
+ÔùÅÔÇï Toplam puan 
+ÔùÅÔÇï Bulunan kelime say─▒s─▒ 
+ÔùÅÔÇï En uzun kelime 
+ÔùÅÔÇï Oyun s├╝resi 
+├ûrnek Oyun Kart─▒: 
+Oyun 12ÔÇï
+Tarih: 15.05.2026ÔÇï
+Grid: 8x8ÔÇï
+Puan: 1240ÔÇï
+Kelime Say─▒s─▒: 18ÔÇï
+En Uzun Kelime: "KEL─░MELER"ÔÇï
+S├╝re: 6 dk 
+Bu yap─▒ sayesinde kullan─▒c─▒ ge├ğmi┼ş performanslar─▒n─▒ detayl─▒ ┼şekilde inceleyebilecektir. 
+Market 
+Bu b├Âl├╝mde, oyun i├ğerisinde kullan─▒labilecek joker ├Âzelliklerinin sat─▒n al─▒nmas─▒ i┼şlemleri 
+ger├ğekle┼ştirilecektir. Kullan─▒c─▒lar, oyun s─▒ras─▒nda avantaj sa─şlayan ├ğe┼şitli jokerleri oyun i├ği alt─▒n 
+kullanarak sat─▒n alabileceklerdir. 
+Oyun i├ğerisinde, kullan─▒c─▒ya ba┼şlang─▒├ğta belirli miktarda oyun i├ği alt─▒n tan─▒mlanacakt─▒r. Bu 
+alt─▒nlar, yaln─▒zca oyun i├ği ├Âzellikleri sat─▒n almak amac─▒yla kullan─▒lacakt─▒r. Kullan─▒c─▒, sahip oldu─şu 
+alt─▒n miktar─▒n─▒ joker sat─▒n alma ekran─▒nda g├Âr├╝nt├╝leyebilecektir. 
+Joker sat─▒n alma ekran─▒nda, her jokerin: 
+ÔùÅÔÇï ├ûzellik a├ğ─▒klamas─▒ 
+ÔùÅÔÇï Kullan─▒m amac─▒ 
+ÔùÅÔÇï Alt─▒n maliyeti 
+ÔùÅÔÇï Kullan─▒m ┼şekli (Animasyonlu g├Âsterim yap─▒labilir) 
+bilgileri a├ğ─▒k bir ┼şekilde g├Âsterilecektir. Kullan─▒c─▒, yeterli alt─▒na sahipse istedi─şi jokeri sat─▒n 
+alabilecek ve oyun s─▒ras─▒nda bu jokerleri kullanabilecektir. 
+Bu projede ger├ğek para ile alt─▒n sat─▒n alma sistemi bulunmayacakt─▒r. Bu nedenle kullan─▒c─▒ya, test 
+ve oyun deneyiminin kesintisiz devam edebilmesi amac─▒yla ba┼şlang─▒├ğta s─▒n─▒rs─▒z veya y├╝ksek 
+miktarda alt─▒n tan─▒mlanacakt─▒r. B├Âylece kullan─▒c─▒, oyun i├ğindeki t├╝m joker ├Âzelliklerini rahatl─▒kla 
+deneyebilecektir. 
+Oyun Ekran─▒ ve Oyun Oynama Ad─▒mlar─▒ 
+Grid seviyelerinden biri se├ğildikten sonra oyun ekran─▒ ge├ğilecektir. Bu ekranda se├ğilen grid 
+de─şeri g├Âre harf alan─▒ a├ğ─▒lacakt─▒r. ├ûrne─şin 6x6 se├ğimin g├Âsterimi a┼şa─ş─▒daki gibidir.  
+ 
+Burada harfler rastgele bir ┼şekilde atanmaktad─▒r. Fakat rastgele atan─▒rken kelime olu┼şturmas─▒ i├ğin 
+belirli bir ┼şekilde bu rastgeleli─şi sa─şlanmas─▒ gereklidir. E─şer tamamen rastgele harf ├╝retilirse, 
+anlaml─▒ kelime olu┼şturmak zorla┼ş─▒r. Bu nedenle harfler T├╝rk├ğe diline uygun frekanslara g├Âre 
+├╝retilir.  
+├ûrne─şin T├╝rk├ğede en s─▒k kullan─▒lan harfler: 
+ÔùÅÔÇï A 
+ÔùÅÔÇï E 
+ÔùÅÔÇï ─░ 
+ÔùÅÔÇï L 
+ÔùÅÔÇï R 
+ÔùÅÔÇï N 
+Bu harflerin gelme olas─▒l─▒─ş─▒ daha y├╝ksek tutulur. 
+Orta s─▒kl─▒kta kullan─▒lan harfler: 
+ÔùÅÔÇï K 
+ÔùÅÔÇï M 
+ÔùÅÔÇï T 
+ÔùÅÔÇï S 
+ÔùÅÔÇï Y 
+ÔùÅÔÇï D 
+Bu harfler orta seviyede ├╝retilecektir. 
+ 
+Daha az kullan─▒lan harfler: 
+ÔùÅÔÇï J 
+ÔùÅÔÇï ─Ş 
+ÔùÅÔÇï F 
+ÔùÅÔÇï V 
+Bu harflerin gelme olas─▒l─▒─ş─▒ daha d├╝┼ş├╝k tutulur. 
+Bu kurallara g├Âre harfler rastgele da─ş─▒tacak ┼şekilde bir algoritma geli┼ştirecektir. Bu algoritmay─▒ 
+geli┼ştirirken  
+harflerden olu┼şabilecek kelimeler kontrol edilecektir. Kelimelerin kontrol├╝ 
+yap─▒larak algoritma geli┼ştirilmesi beklenmektedir.  
+4.1 Ba┼şlang─▒├ğ Harfi Se├ğimi 
+Oyuncu kelime olu┼şturmak i├ğin grid ├╝zerinde bulunan herhangi bir harfi se├ğerek ba┼şlar. Oyuncu 
+harfin ├╝zerine dokundu─şunda, se├ğilen harf g├Ârsel olarak vurgulan─▒r. Bu vurgulama, oyuncunun 
+hangi harfi se├ğti─şini anlamas─▒n─▒ sa─şlar. Se├ğilen ilk harf, olu┼şturulacak kelimenin ba┼şlang─▒├ğ harfi 
+olarak kabul edilir. 
+Oyuncu ilk harfi se├ğtikten sonra parma─ş─▒n─▒ s├╝r├╝kleyerek kom┼şu harfleri se├ğmeye devam eder. 
+Ancak burada ├Ânemli bir kural vard─▒r. Oyuncu sadece kom┼şu harflere ge├ğebilir. 
+Kom┼şuluk ┼şu y├Ânleri kapsar: 
+ÔùÅÔÇï Yukar─▒ 
+ÔùÅÔÇï A┼şa─ş─▒ 
+ÔùÅÔÇï Sa─ş 
+ÔùÅÔÇï Sol 
+ÔùÅÔÇï Sa─ş ├╝st 
+ÔùÅÔÇï Sa─ş alt 
+ÔùÅÔÇï Sol ├╝st 
+ÔùÅÔÇï Sol alt 
+Bu sayede oyuncu toplam 8 farkl─▒ y├Ânde hareket edebilir. 
+Bu sistem oyuncuya daha fazla kelime olu┼şturma ├Âzg├╝rl├╝─ş├╝ sa─şlar. 
+Oyuncu harfleri se├ğerken her yeni se├ğilen harf bir ├Ânceki harfe kom┼şu olmak zorundad─▒r. Ayr─▒ca 
+se├ğilen harf tekrar se├ğilemez. Bu kural, ayn─▒ h├╝crenin bir kelime i├ğerisinde birden fazla 
+kullan─▒lmas─▒n─▒ engeller. ├ûrnek: 
+ 
+S ÔåÆ O ÔåÆ R ÔåÆ U 
+Oyunda olu┼şturulabilecek kelimelerin minimum uzunlu─şu 3 harf olarak belirlenmi┼ştir. Oyuncu 3 
+harften k─▒sa bir se├ğim yapt─▒─ş─▒nda bu se├ğim ge├ğersiz say─▒l─▒r. 
+5. Kelime Do─şrulama Mekani─şi 
+Oyuncu parma─ş─▒n─▒ ekrandan kald─▒rd─▒─ş─▒nda kelime olu┼şturma i┼şlemi tamamlanm─▒┼ş olur. Se├ğilen 
+harfler birle┼ştirilerek kelime elde edilir. Daha sonra bu kelime s├Âzl├╝k veri taban─▒nda kontrol 
+edilir. 
+E─şer kelime s├Âzl├╝kte bulunuyorsa: 
+ÔùÅÔÇï Kelime ge├ğerli kabul edilir 
+ÔùÅÔÇï Harfler patlat─▒l─▒r 
+E─şer kelime s├Âzl├╝kte bulunmuyorsa: 
+ÔùÅÔÇï Se├ğim iptal edilir 
+ÔùÅÔÇï Harfler eski haline d├Âner 
+Her iki durumda da hamle say─▒s─▒ 1 de─şer d├╝┼şmektedir.  
+Yok olan kelimenin puan─▒ hesaplanarak ├╝st k─▒sm─▒nda anl─▒k puan k─▒sm─▒na ekleme yap─▒l─▒r. Her 
+harfin puan─▒ farkl─▒d─▒r. Harf puanlar─▒na g├Âre ilgili kelimenin puan─▒ hesaplanarak genel puana 
+eklenmektedir.  
+Harflerin puanlar─▒ a┼şa─ş─▒daki tabloda g├Âsterilmi┼ştir.  
+  
+Harf 
+  
+A 
+  
+B 
+  
+C 
+  
+├ç 
+  
+D 
+  
+E 
+  
+F 
+  
+G 
+  
+─Ş 
+  
+H 
+  
+I 
+  
+─░ 
+  
+J 
+  
+K 
+  
+L 
+  
+Puan─▒ 
+  
+1 
+  
+3 
+  
+4 
+  
+4 
+  
+3 
+  
+1 
+  
+7 
+  
+5 
+  
+8 
+  
+5 
+  
+2 
+  
+1 
+  
+10 
+  
+1 
+  
+1 
+  
+Harf 
+  
+M 
+  
+N 
+  
+O 
+  
+├û 
+  
+P 
+  
+R 
+  
+S 
+  
+┼Ş 
+  
+T 
+  
+U 
+  
+├£ 
+  
+V 
+  
+Y 
+  
+Z 
+  
+  
+Puan─▒ 
+  
+2 
+  
+1 
+  
+2 
+  
+7 
+  
+5 
+  
+1 
+  
+2 
+  
+4 
+  
+1 
+  
+2 
+  
+3 
+  
+7 
+  
+3 
+  
+4 
+  
+ 
+├ûrnek Puan hesaplama:  ÔÇ£soruÔÇØ kelimesinin puan─▒ 2+2+1+2 =7 puand─▒r. 
+6. Harf Patlatma Mekani─şi 
+Ge├ğerli bir kelime olu┼şturuldu─şunda, se├ğilen harfler oyun alan─▒ndan kald─▒r─▒l─▒r. Kald─▒r─▒lan 
+harflerin ├╝st├╝nde bulunan harfler a┼şa─ş─▒ do─şru d├╝┼şer. Bu i┼şlem yer├ğekimi mant─▒─ş─▒ ile 
+ger├ğekle┼ştirilir. 
+Bo┼ş kalan alanlara ├╝stten yeni harfler ├╝retilir.  
+Oyunda oyuncular─▒n uzun kelimeler olu┼şturmas─▒ te┼şvik edilmektedir. Olu┼şturulan kelimenin harf 
+say─▒s─▒na g├Âre ├Âzel g├╝├ğler olu┼şmaktad─▒r. Bu ├Âzel g├╝├ğler, kelime patlat─▒ld─▒ktan sonra son harfin 
+bulundu─şu konumda ├Âzel bir simge olarak b─▒rak─▒l─▒r. Oyuncu bu simgeyi tekrar bir kelime 
+i├ğerisinde kulland─▒─ş─▒nda ilgili ├Âzel g├╝├ğ aktif hale gelir. 
+A┼şa─ş─▒daki tabloda ├Âzel g├╝├ğ mekanikleri detayl─▒ olarak verilmi┼ştir: 
+ 
+ 
+ 
+ 
+Kelime 
+Uzunlu─şu 
+├ûzel G├╝├ğ Ad─▒ 
+Simge  A├ğ─▒klama 
+4 harf 
+Sat─▒r Temizleme 
+A Ôçå 
+Patlat─▒lan son harf yerinde kalarak ├Âzel 
+bir simgeye d├Ân├╝┼ş├╝r. Bu harf tekrar 
+kullan─▒ld─▒─ş─▒nda bulundu─şu sat─▒r tamamen 
+temizlenir. 
+5 harf  
+Alan Patlatma 
+A Ô£╣ 
+Patlat─▒lan son harf yerinde kal─▒r ve bomba 
+simgesine d├Ân├╝┼ş├╝r. Bu harf tekrar 
+kullan─▒ld─▒─ş─▒nda ├ğevresindeki t├╝m kom┼şu 
+harfler yok edilir. 
+6 harf 
+S├╝tun Temizleme 
+A Ôçà 
+Patlat─▒lan son harf ├Âzel simgeye d├Ân├╝┼ş├╝r. 
+Bu harf tekrar kullan─▒ld─▒─ş─▒nda bulundu─şu 
+s├╝tun tamamen temizlenir. 
+7 harf ve ├╝zeri 
+Mega Patlatma 
+A Ô£¬ 
+Patlat─▒lan son harf mega simgeye 
+d├Ân├╝┼ş├╝r. Bu harf tekrar kullan─▒ld─▒─ş─▒nda 2 
+birim ├ğevresindeki t├╝m harfler yok edilir. 
+8. Kelime Kalmama Kontrol├╝ 
+Her hamle sonras─▒nda grid ├╝zerinde kelime kal─▒p kalmad─▒─ş─▒ kontrol edilir. Bu kontrol algoritmik 
+olarak yap─▒l─▒r. 
+Grid ├╝zerindeki her harf ba┼şlang─▒├ğ noktas─▒ kabul edilir. Daha sonra kom┼şu harfler kontrol 
+edilerek kelime olu┼şturulmaya ├ğal─▒┼ş─▒l─▒r. Oyunda grid olu┼şturulurken ve her hamle sonras─▒nda arka 
+planda ├ğal─▒┼şan bir kelime tarama algoritmas─▒ bulunacakt─▒r. Bu algoritma, grid ├╝zerinde s├Âzl├╝kte 
+ge├ğerli ve oyun kurallar─▒na uygun ┼şekilde olu┼şturulabilecek kelimeleri tespit eder. Tespit edilen 
+kelime say─▒s─▒ oyun ekran─▒n─▒n ├╝st k─▒sm─▒nda kullan─▒c─▒ya g├Âsterilecektir. 
+├ûrnek g├Âsterim:ÔÇï
+Gridde Olu┼şturulabilir Kelime Say─▒s─▒: 3 
+Bu mekanizman─▒n amac─▒, oyuncunun o anki gridin oynanabilir durumda olup olmad─▒─ş─▒n─▒ 
+anlayabilmesini sa─şlamakt─▒r. Ayr─▒ca sistem, grid ├╝zerinde hi├ğ kelime kalmamas─▒ riskini ├Ânlemek 
+amac─▒yla minimum kelime kontrol├╝ yapacakt─▒r. 
+Bu kapsamda a┼şa─ş─▒daki kurallar uygulanacakt─▒r: 
+1.ÔÇï Oyun ba┼şlang─▒c─▒nda grid ├╝retildikten hemen sonra sistem, grid ├╝zerinde olu┼şturulabilecek 
+kelimeleri analiz edecektir. 
+2.ÔÇï E─şer analiz sonucunda grid ├╝zerinde en az 1 ge├ğerli kelime bulunmuyorsa, grid mevcut 
+haliyle kullan─▒c─▒ya g├Âsterilmeyecektir. 
+3.ÔÇï Bu durumda sistem, harfleri tamamen rastgele yeniden ├╝retmek yerine kurall─▒ harf 
+├╝retimi uygulayacakt─▒r. 
+4.ÔÇï Kurall─▒ harf ├╝retimi s─▒ras─▒nda, T├╝rk├ğe harf frekanslar─▒, kom┼şuluk ili┼şkileri ve s├Âzl├╝k 
+kontrol├╝ dikkate al─▒narak grid ├╝zerinde en az 1 anlaml─▒ kelime olu┼şacak ┼şekilde harf 
+yerle┼şimi d├╝zenlenecektir. 
+5.ÔÇï Her ba┼şar─▒l─▒ veya ba┼şar─▒s─▒z hamleden sonra grid yeniden analiz edilecek ve ekrandaki 
+olu┼şturulabilir kelime say─▒s─▒ g├╝ncellenecektir. 
+6.ÔÇï Yeni harflerin ├╝stten d├╝┼şmesiyle olu┼şan gridde de yine en az 1 ge├ğerli kelime bulunup 
+bulunmad─▒─ş─▒ kontrol edilecektir. 
+7.ÔÇï E─şer hamle sonras─▒ gridde hi├ğ kelime kalmad─▒─ş─▒ tespit edilirse, sistem otomatik olarak 
+kar─▒┼şt─▒rma, yeniden ├╝retme veya kontroll├╝ harf yerle┼ştirme mekanizmalar─▒ndan birini 
+devreye alacakt─▒r. 
+8.ÔÇï Kelime say─▒s─▒, kelimelerin ortak harf kullanamayacak ┼şekilde olu┼şturulmas─▒yla 
+bulunmaktad─▒r. 
+9.ÔÇï Kelime say─▒s─▒, kelimelerin ortak harf kullanamayacak ┼şekilde olu┼şturulmas─▒yla 
+bulunmaktad─▒r. 
+Bu sayede oyun alan─▒n─▒n her zaman ├ğ├Âz├╝lebilir durumda kalmas─▒ hedeflenmektedir. B├Âylece 
+kullan─▒c─▒, kelime bulunamayan bir grid ile kar┼ş─▒la┼şmayacak ve oyun ak─▒┼ş─▒ kesintiye 
+u─şramayacakt─▒r. 
+9. Joker Mekani─şi 
+Oyun ekran─▒nda ayr─▒ca markette al─▒nan ├Âzel g├╝├ğlere sahip joker elemanlar olacakt─▒r. Bu jokerler 
+oyun ekran─▒n alt─▒nda se├ğilebilir ┼şekilde olacakt─▒r. Marketten al─▒nd─▒─ş─▒nda aktif olacak ve 
+kullan─▒labilir olarak g├Âr├╝lecektir. Jokerler ve ├Âzellikleri a┼şa─ş─▒da listelenmi┼ştir. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Simgesi 
+─░smi 
+Alt─▒n  
+A├ğ─▒klamas─▒ 
+ 
+Bal─▒k 
+100 
+Gridde rastgele olarak harfleri yok 
+etmektedir. Rastgele yok olan harflerin 
+├╝zerindeki harfler a┼şa─ş─▒ya d├╝┼şmektedir. 
+ 
+Tekerlek 
+200 
+Gridde se├ğilen harfin bulundu─şu sat─▒r 
+ve 
+s├╝tundaki 
+t├╝m 
+harfler 
+yok 
+olmaktad─▒r.  
+ 
+Lolipop K─▒r─▒c─▒  
+75 
+Gridde se├ğilen bir harfi yok etmek i├ğin 
+kullan─▒lmaktad─▒r. 
+Bu 
+harf 
+yok 
+oldu─şunda 
+yukar─▒s─▒ndaki 
+kelimeler 
+a┼şa─ş─▒ d├╝┼şmektedir. 
+ 
+Serbest 
+De─şi┼ştirme 
+125 
+Gridde birbirine temas eden iki harfin 
+yer de─şi┼ştirilmesini sa─şlamaktad─▒r. 
+ 
+Harf Kar─▒┼şt─▒rma 
+300 
+Bu ├Âzellik se├ğildi─şinde gridde bulunan 
+harflerin 
+rastgele 
+bir 
+┼şekilde 
+kar─▒┼şt─▒r─▒lmas─▒n─▒ sa─şlamaktad─▒r.  
+ 
+Parti 
+G├╝├ğlendiricisi 
+ 
+ 
+400 
+Bu ├Âzellik se├ğildi─şinde gridde bulunan 
+t├╝m harfler yok edilir ve tekrardan 
+rastgele bir ┼şekilde  harfler yukar─▒dan 
+a┼şa─ş─▒ya d├╝┼şmektedir.  
+ 
+10. Combo Mekani─şi 
+Combo Mekani─şi, oyuncunun olu┼şturdu─şu ana kelimenin i├ğinde yer alan anlaml─▒ alt kelimeler 
+├╝zerinden puan kazanmas─▒n─▒ sa─şlayan bir mekanizma olarak tasarlanm─▒┼şt─▒r. Bu mekanizma, 
+oyuncuyu daha uzun ve stratejik kelimeler olu┼şturmaya te┼şvik etmekte, oyun deneyimini 
+zenginle┼ştirmektedir. 
+Combo olu┼şumu i├ğin izlenen temel kurallar ┼şunlard─▒r: 
+1.ÔÇï Ana Kelime Se├ğimi: Oyuncu, grid ├╝zerinde anlaml─▒ bir kelime olu┼şturur ve bu kelime ana 
+kelime olarak kabul edilir. 
+2.ÔÇï Alt Kelime Tespiti: Ana kelime i├ğinde 3 harf veya daha uzun anlaml─▒ kelimeler aran─▒r. 
+3.ÔÇï Combo Say─▒m─▒: Bulunan her alt kelime, combo say─▒s─▒n─▒ art─▒r─▒r. Ana kelime her zaman 
+combo say─▒s─▒na dahildir. 
+4.ÔÇï Tekrarlama K─▒s─▒tlamas─▒: Ayn─▒ alt kelime birden fazla kez say─▒lamaz. 
+5.ÔÇï Harf S─▒ras─▒: Alt kelimeler, ana kelimenin harf s─▒ras─▒na g├Âre bulunmal─▒d─▒r. 
+├ûrnek Combo Hesaplamalar─▒ 
+Ana Kelime 
+─░├ğ Kelimeler 
+Combo Say─▒s─▒ 
+ADANA 
+ADANA,DANA,ANA,ADA  
+4 x combo 
+MASAL 
+MASAL,MASA,ASA,SAL 
+4 x combo 
+SARI 
+SARI, ARI 
+2 x combo  
+Burada combo puan hesaplanmas─▒ s─▒ras─▒nda normal harf hesaplamas─▒ gibi alt kelimelerin puanlar─▒ 
+da hesaplanarak puan hesaplamas─▒ yap─▒l─▒r.  
+├ûrne─şin  SARI kelimesi bulundu.  2+1+1+2 = 6 Puan olmas─▒ gerekirken ARI kelimesinin den de 
+puan hesaplan─▒p eklenmektedir. 1+1+2=4 puanda gelir toplam olarak 10 puan eklenmektedir. 
+11. Oyun Bitirme Ko┼şullar─▒ 
+Oyun a┼şa─ş─▒daki durumlarda sona erer: 
+ÔùÅÔÇï Hamle say─▒s─▒ bitti─şinde oyun otomatik olarak biter ve oyun mevcut sonucu skor tablosuna 
+yaz─▒l─▒r ve ana ekrana geri d├Âner. 
+ÔùÅÔÇï Oyuncu geri diyerek oyundan ├ğ─▒kmak istedi─şinde ÔÇ£ oyuncuya ├ğ─▒kmak istedi─şinize emin 
+misinizÔÇØ soru sorularak ÔÇ£EvetÔÇØ ve ÔÇ£Hay─▒rÔÇØ se├ğenekleri sunulur. Hay─▒r dedi─şinizde oyuna 
+kald─▒─ş─▒ yerden devam eder. ÔÇ£EvetÔÇØ dedi─şinde ise mevcut sonucu skor tablosuna yaz─▒l─▒r ve 
+ana ekrana d├Âner.  
+ 
+ 
+ 
+ 
+ 
+ 
+├ûdev Teslimi ve Kurallar 
+ÔùÅÔÇï Proje raporu sadece LaTeX kullan─▒larak yaz─▒lmal─▒ ve pdf format─▒nda sisteme 
+y├╝klenmelidir. Sisteme ayr─▒ca LaTeX eklentileri de y├╝klenmelidir. Proje raporunu sadece 
+pdf 
+format─▒nda 
+y├╝kleyen 
+├Â─şrencilerin 
+proje 
+rapor 
+puan─▒ 
+0 
+(s─▒f─▒r) 
+olarak 
+de─şerlendirilecektir.  
+ÔùÅÔÇï Proje gruplar─▒ en fazla 2 ki┼şilik olabilir. 
+ÔùÅÔÇï Her ├Â─şrenci kendi ├Â─şretim t├╝r├╝ i├ğerisinde grup olu┼şturacakt─▒r. 
+ÔùÅÔÇï Proje raporu IEEE format─▒nda en az 4 sayfa haz─▒rlanmal─▒d─▒r. 
+ÔùÅÔÇï Dersin takibi ve proje teslimi edestek2.kocaeli.edu.tr sistemi ├╝zerinden yap─▒lacakt─▒r. 
+ÔùÅÔÇï Proje ile ilgili sorular yaln─▒zca edestek2.kocaeli.edu.tr sitesindeki forum ├╝zerinden Ar┼ş. 
+G├Âr. Emin ├ûlmez ve Ar┼ş. G├Âr. ─░brahim ┼ŞahanÔÇÖa sorulabilir.  
+ÔùÅÔÇï Proje teslim tarihine 3 g├╝n kala gelen sorular yan─▒tlanmayacakt─▒r. 
+ÔùÅÔÇï Sunumlar 4-8 May─▒s haftas─▒nda al─▒nacak olup kesin g├╝n ve saat bilgisi daha sonra 
+duyurulacakt─▒r. 
+ÔùÅÔÇï Herkes projeden bireysel olarak sorumludur. Proje sunumunda kulland─▒─ş─▒n─▒z herhangi bir 
+sat─▒r kodu a├ğ─▒klaman─▒z ya da de─şi┼ştirerek hocalar─▒m─▒z─▒n yan─▒nda tekrar ├ğal─▒┼şt─▒rman─▒z 
+istenebilir. Sorulacak sorular puanlamaya dahil olacakt─▒r. 
+ÔùÅÔÇï Projede aray├╝z├╝n isterlerin a├ğ─▒k├ğa g├Âr├╝lebilece─şi seviyede tasarlanmas─▒na ├Âzen 
+g├Âsterilmelidir. 
+
